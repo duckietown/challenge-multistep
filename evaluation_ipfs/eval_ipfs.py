@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import os
-
+import traceback
 import ipfsapi
 
 from duckietown_challenges import ChallengeInterfaceEvaluator, InvalidEnvironment, \
@@ -13,7 +13,6 @@ contents = b'from step1 of evaluator'
 def score_step1(cie: ChallengeInterfaceEvaluator):
     cie.set_evaluation_file_from_data('regular.txt', contents)
 
-
     d = cie.get_tmp_dir()
     dn = os.path.join(d, 'mydata')
     fn = os.path.join(dn, 'one.txt')
@@ -24,8 +23,18 @@ def score_step1(cie: ChallengeInterfaceEvaluator):
 
     # "docker.for.mac.host.internal"
     # API = "/ip4/127.0.0.1/tcp/5001",
-    client = ipfsapi.connect("docker.for.mac.host.internal", 5001)
-    res = client.add(dn, recursive=False)
+    try:
+        try:
+            client = ipfsapi.connect("docker.for.mac.host.internal", 5001)
+        except:
+            msg = 'Cannot connect to docker.for.mac.host.internal; trying 127.0.0.1'
+            cie.info(msg)
+            client = ipfsapi.connect("127.0.0.1", 5001)
+        res = client.add(dn, recursive=False)
+    except:
+        msg = f'Cannot connect to ipfs server:\n{traceback.format_exc()}'
+        raise InvalidEnvironment(msg)
+
     cie.info(res)
     qm = res[-1]['Hash']
     # qm = res['']

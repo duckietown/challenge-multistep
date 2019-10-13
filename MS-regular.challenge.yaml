@@ -1,7 +1,7 @@
-challenge: aido2_test_multistep_ipfs
-title: "[Test] Multi-step evaluation with IPFS"
-description: "multi step, with IPFS support"
-tags: [testing, v4]
+challenge: aido2-MS-regular
+title: "[Test] Multi-step evaluation"
+description: "multi step"
+tags: ["aido2", "aido2-testing", "testing", "v4",   "visible"]
 protocol: aido_test_multistep-v4
 
 date-open: 2018-09-01t21:59:43.10-05:00
@@ -11,43 +11,41 @@ roles: {}
 
 scoring:
   scores:
-    - name: passed-step1
-      description: 1 if the submission passed the first step.
-    - name: passed-step2
-      description: 1 if the submission passed the second step.
+  - name: passed-step1
+    description: 1 if the submission passed the first step.
+  - name: passed-step2
+    description: 1 if the submission passed the second step.
+
 
 
 steps:
   step1:
     title: First step
     description: |
-      In this first step, we run the container `step1-evaluator` and the
-      solution container.
+        In this first step, we run the container `step1-evaluator` and the
+        solution container.
     timeout: 100
     evaluation_parameters:
       services:
         step1-evaluator:
           build:
-            context: ./evaluation_ipfs
+            context: ./evaluation
 
         solution:
           image: SUBMISSION_CONTAINER
-    features_required:
-      ipfs: true
-      
+    features_required: {}
   step2:
     title: Second step
     description: |
-      In the second step, we only run a second container called `step2-evaluator`.
+        In the second step, we only run a second container called `step2-evaluator`.
     timeout: 100
     evaluation_parameters:
       services:
         step2-evaluator:
           build:
-            context: ./evaluation_ipfs
+            context: ./evaluation
 
-    features_required:
-      ipfs: true
+    features_required: {}
 
 transitions:
   - [START, success, step1]

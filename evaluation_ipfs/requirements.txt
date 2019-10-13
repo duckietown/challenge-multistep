@@ -1,3 +1,3 @@
 ipfsapi
 
--e git://github.com/duckietown/duckietown-challenges.git@v4#egg=duckietown-challenges
+duckietown-challenges-daffy
