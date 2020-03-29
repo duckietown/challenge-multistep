@@ -1,1 +1,1 @@
-duckietown-challenges-daffy>=5.1.4
+duckietown-challenges-daffy-aido4

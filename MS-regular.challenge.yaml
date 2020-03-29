@@ -5,7 +5,7 @@ tags: ["aido2", "aido2-testing", "testing", "v4",   "visible"]
 protocol: aido_test_multistep-v4
 
 date-open: 2018-09-01t21:59:43.10-05:00
-date-close: 2019-12-01t21:59:43.10-05:00
+date-close: 2021-10-01t21:59:43.10-05:00
 
 roles: {}
 
@@ -13,8 +13,10 @@ scoring:
   scores:
   - name: passed-step1
     description: 1 if the submission passed the first step.
+    short: passed-step1
   - name: passed-step2
     description: 1 if the submission passed the second step.
+    short: passed-step2
 
 
 
