@@ -1,3 +1,3 @@
 ipfsapi
 
-duckietown-challenges-daffy-aido4
+duckietown-challenges-daffy
