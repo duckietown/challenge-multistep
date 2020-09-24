@@ -24,7 +24,7 @@ For more details, see [the online leaderboard][leaderboard].
 [leaderboard]: https://challenges.duckietown.org/v3/humans/challenges/aido1_test_multistep-v3/leaderboard
 
 
-[book]: http://docs.duckietown.org/DT18/AIDO/out/
+[book]: https://docs.duckietown.org/DT18/AIDO/out/
 
 [online]: https://challenges.duckietown.org/v3/humans/challenges/aido1_test_multistep-v3
 
