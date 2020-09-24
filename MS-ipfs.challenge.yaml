@@ -13,9 +13,10 @@ scoring:
   scores:
     - name: passed-step1
       description: 1 if the submission passed the first step.
+      short: passed-step1
     - name: passed-step2
       description: 1 if the submission passed the second step.
-
+      short: passed-step2
 
 steps:
   step1:
