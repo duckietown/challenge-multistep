@@ -1,2 +1,4 @@
 out-*
 submission/evaluator.log
+evaluation/requirements.resolved
+evaluation_ipfs/requirements.resolved
