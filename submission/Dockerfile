@@ -8,9 +8,10 @@ RUN echo PIP_INDEX_URL=${PIP_INDEX_URL}
 
 WORKDIR /solution
 
-COPY requirements.resolved ./
-RUN pip install -U pip>=20.2
-RUN pip install --use-feature=2020-resolver -r requirements.resolved
+RUN pip3 install -U pip>=20.2
+COPY requirements.* ./
+RUN cat requirements.* > .requirements.txt
+RUN  pip3 install --use-feature=2020-resolver -r .requirements.txt
 
 COPY solution.py .
 CMD python solution.py
