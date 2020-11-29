@@ -10,7 +10,7 @@ class Solver(ChallengeSolution):
         step_name = cis.get_current_step()
 
         basename = 'myfile.txt'
-        contents = 'from step1'
+        contents = b'from step1'
         STEP1 = 'step1'
         STEP2 = 'step2'
 
