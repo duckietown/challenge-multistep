@@ -1,5 +1,10 @@
 ARG AIDO_REGISTRY
-FROM ${AIDO_REGISTRY}/duckietown/aido-base-python3:daffy-amd64
+ARG ARCH=amd64
+ARG MAJOR=daffy
+ARG BASE_TAG=${MAJOR}-${ARCH}
+
+
+FROM ${AIDO_REGISTRY}/duckietown/aido-base-python3:${BASE_TAG}
 
 
 ARG PIP_INDEX_URL="https://pypi.org/simple"
@@ -8,12 +13,12 @@ RUN echo PIP_INDEX_URL=${PIP_INDEX_URL}
 
 WORKDIR /solution
 
-RUN pip3 install -U "pip>=20.2"
+RUN python3 -m pip install -U "pip>=20.2"
 COPY requirements.* ./
 RUN cat requirements.* > .requirements.txt
-RUN  pip3 install  -r .requirements.txt
+RUN python3 -m pip install  -r .requirements.txt
 
 COPY solution.py .
 RUN PYTHONPATH=. python3 -c "from solution import *"
 
-CMD python solution.py
+CMD python3 solution.py
