@@ -14,7 +14,7 @@ The [online description of this challenge is here][online].
 
 For submitting, please follow [the instructions available in the book][book].
 
-## Leaderboard 
+## Leaderboard
 
 <img style="width: 24em" src="https://challenges.duckietown.org/v3/humans/challenges/aido1_test_multistep-v3/leaderboard/image.png?"/>
 
