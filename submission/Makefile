@@ -14,4 +14,4 @@ submit: update-reqs
 	dts challenges submit --user-label "Template"
 
 submit-bea: update-reqs
-	dts challenges submit --user-label "Template" --impersonate 1639 --challenge all  --retire-same-label
+	dts challenges submit --user-label "Template" --impersonate 1639 --challenge all  --retire-same-label --buildx
